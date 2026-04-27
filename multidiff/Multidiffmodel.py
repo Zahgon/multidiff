@@ -23,7 +23,7 @@ class MultidiffModel():
 
 	def add_listener(self, listener):
 		"""Adds an object that listens to events. Views add themselves."""
-		self.listeners.append(listener)
+		pass
 
 	def add(self, data, info=''):
 		"""Add a single data object to the model"""
@@ -34,28 +34,19 @@ class MultidiffModel():
 
 	def add_all(self, datas):
 		"""Add a list of byte datas"""
-		for data in datas:
-			self.add(data)
+		pass
 		
 	def clear(self):
 		"""Clears all object and diff data"""
-		#the objects being analyzed:
-		#files, packets, lines, etc. backed by bytes or bytearrays
-		self.objects = []
-		#a list of diffs between objects
-		self.diffs = []
+		pass
 
 	def diff_sequence(self):
 		"""Diff all objects to the next one in the list"""
-		for i in range(len(self.objects[:-1])):
-			self.diff(i, i+1)
+		pass
 
 	def diff_baseline(self, baseline=0):
 		"""Diff all objects against a common baseline"""
-		for i in range(len(self.objects)):
-			if i is baseline:
-				pass
-			self.diff(baseline, i)
+		pass
 
 	def diff(self, source, target):
 		"""Diff two objects of the model and store the result"""
@@ -68,8 +59,8 @@ class MultidiffModel():
 
 	def diff_last_pair(self):
 		"""Diff the two most recently added objects"""
-		self.diff(0, len(self.objects) - 1)
+		pass
 
 	def diff_first_to_last(self):
 		"""Diff the most recently added object with the first one"""
-		self.diff(len(self.objects) - 2, len(self.objects) - 1)
+		pass

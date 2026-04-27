@@ -14,11 +14,4 @@ class SocketController(socketserver.TCPServer):
 class MultidiffTCPHandler(socketserver.BaseRequestHandler):
 	"""Receives one diffable packet from a socket and adds it to the model"""
 	def handle(self):
-		data = self.request.recv(0x10000)
-		if   self.server.informat == 'json':
-			msg  = json.loads(str(data, 'utf8'))
-			data = base64.b64decode(msg['data'])
-			info = msg['info']
-		elif self.server.informat == 'raw':
-			info = ''
-		self.server.model.add(data, info=info)
+		pass
